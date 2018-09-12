@@ -146,15 +146,13 @@ jobs:
 #
   release:
     docker:
-      - image: circleci/ruby:2.5
+      - image: circleci/python
 
     steps:
       - attach_workspace:
           at: workspace
 
-      - run: env
-      - run: gem install package_cloud
-      - run: package_cloud push syapse/General/python/sdist workspace/dist/{{ cookiecutter.project_dash_slug  }}*.tar.gz
+      - run: workspace/bin/packagecloud_push workspace/dist/{{ cookiecutter.project_dash_slug }}*.tar.gz
 
 workflows:
   version: 2
