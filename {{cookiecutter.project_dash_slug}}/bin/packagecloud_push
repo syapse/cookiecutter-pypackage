@@ -1,0 +1,22 @@
+#!/bin/sh
+
+##
+# Push a package to packagecloud
+# Packagecloud API docs:
+# https://packagecloud.io/docs/api#resource_packages_method_create
+
+URL="https://${PACKAGECLOUD_TOKEN?Please export PACKAGECLOUD_TOKEN}:@packagecloud.io/api/v1"
+
+dist_id() {
+  curl -s "$URL/distributions.json" |
+    python -c 'import pprint; import json; import sys; pprint.pprint(json.loads(sys.stdin.read())["py"][0]["versions"][0]["id"])'
+}
+
+main() {
+  curl -F "package[distro_version_id]=$(dist_id)" \
+       -F "package[package_file]=@${1?Please provide a file to upload}" \
+       -s "$URL/repos/syapse/General/packages.json" |
+    python -c 'import sys; import json; import pprint; pprint.pprint(json.loads(sys.stdin.read()))'
+}
+
+main "$@"
