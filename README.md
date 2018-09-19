@@ -34,4 +34,5 @@ The following options can be specified when creating a new service.
 | `project_short_description`   | A few words about the project.                                                           |
 | `version`                     | Semantic Version number.                                                                 |
 | `command_line_interface`      | Whether to provide a command line tool.                                                  |
-| `packagecloud`                | Whether to integrate packagecloud into the Pipfile.                                      |
+| `enable_packagecloud`         | Whether to integrate packagecloud into the project.                                      |
+| `packagecloud_read_token`     | The read token used to pull from packagecloud.                                           |
