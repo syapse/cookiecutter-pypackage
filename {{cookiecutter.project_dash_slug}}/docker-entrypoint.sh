@@ -12,9 +12,9 @@ run_cli() {
   export NEW_RELIC_CONFIG_FILE
   if [ -n "${NEW_RELIC_LICENSE_KEY}" ]; then
     echo "Running with New Relic monitoring..."
-    exec newrelic-admin run-program python {{cookiecutter.project_dash_slug}}/cli.py "$@"
+    exec newrelic-admin run-program python {{cookiecutter.project_slug}}/cli.py "$@"
   else
-    exec python {{cookiecutter.project_dash_slug}}/cli.py "$@"
+    exec python {{cookiecutter.project_slug}}/cli.py "$@"
   fi
 }
 
