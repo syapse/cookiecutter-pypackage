@@ -11,10 +11,10 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-"{{ cookiecutter.project_dash_slug }}" = {editable = true, path = "."}
+"e1839a8" = {path = ".", editable = true}
 
 [dev-packages]
-"{{ cookiecutter.project_dash_slug }}" = {path = ".", extras = ["dev", "test"], editable = true}
+"e1839a8" = {path = ".", editable = true, extras = ["dev", "test"]}
 
 
 [requires]
