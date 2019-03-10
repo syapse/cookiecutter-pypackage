@@ -3,14 +3,11 @@
 IMAGE_NAME='{{cookiecutter.project_dash_slug | lower}}'
 
 main() {
-  echo "Building package..."
-  _run python setup.py build > /dev/null
+  echo "Running container ..."
   _run "$@"
 }
 
-
 _run () {
-  source .env
   docker run \
       --rm \
       --volume "$(pwd)":/srv \
