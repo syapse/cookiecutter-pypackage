@@ -14,7 +14,8 @@ name = "pypi"
 "{{ cookiecutter.project_dash_slug }}" = {editable = true, path = "."}
 
 [dev-packages]
-"{{ cookiecutter.project_dash_slug }}" = {editable = true, path = ".", extras = ["dev", "test"]}
+"{{ cookiecutter.project_dash_slug }}" = {path = ".", extras = ["dev", "test"], editable = true}
+
 
 [requires]
 python_version = "{%- if cookiecutter.python_2_7|lower == 'yes' %}2.7{%- else %}3.7{%- endif %}"
