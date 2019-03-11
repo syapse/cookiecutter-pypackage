@@ -4,19 +4,18 @@
 url = "https://{{ cookiecutter.packagecloud_read_token }}:@packagecloud.io/syapse/General/pypi/simple"
 verify_ssl = true
 name = "packagecloud"
-{%- endif -%}
-
+{%- endif %}
 [[source]]
 url = "https://pypi.org/simple"
 verify_ssl = true
 name = "pypi"
 
-[dev-packages]
-unittest-xml-reporting = "*"
-bump2version = "*"
-
 [packages]
-"{{ cookiecutter.project_dash_slug }}" = {editable = true, path = "."}
+"e1839a8" = {path = ".", editable = true}
+
+[dev-packages]
+"e1839a8" = {path = ".", editable = true, extras = ["dev", "test"]}
+
 
 [requires]
-python_version = "{%- if cookiecutter.python_2_7|lower == 'yes' %}2.7{%- else %}3.6{%- endif %}"
+python_version = "{%- if cookiecutter.python_2_7|lower == 'yes' %}2.7{%- else %}3.7{%- endif %}"
