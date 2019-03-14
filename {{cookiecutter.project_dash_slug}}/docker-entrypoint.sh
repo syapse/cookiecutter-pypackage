@@ -3,7 +3,7 @@
 main() {
   [ $# -lt 1 ] && run_cli
   case "$1" in
-    --exec) exec ${@:2};;
+    --exec) shift; exec "${@}";;
     *) run_cli "$@";;
   esac
 }
