@@ -1,19 +1,21 @@
-[[source]]
-url = "https://pypi.org/simple"
-verify_ssl = true
-name = "pypi"
-
-{% if cookiecutter.enable_packagecloud | lower == 'yes' %}
+{%- if cookiecutter.enable_packagecloud | lower == 'yes' -%}
 [[source]]
 # Please don't reuse the read token below in other projects. Generate a new one.
 url = "https://{{ cookiecutter.packagecloud_read_token }}:@packagecloud.io/syapse/General/pypi/simple"
 verify_ssl = true
 name = "packagecloud"
-
-{% endif %}
-[dev-packages]
+{%- endif %}
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
 
 [packages]
-"e1839a8" = {editable = true, path = "."}
+"e1839a8" = {path = ".", editable = true}
+
+[dev-packages]
+"e1839a8" = {path = ".", editable = true, extras = ["dev", "test"]}
+
 
 [requires]
+python_version = "{%- if cookiecutter.python_2_7|lower == 'yes' %}2.7{%- else %}3.7{%- endif %}"
