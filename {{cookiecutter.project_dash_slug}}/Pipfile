@@ -12,10 +12,9 @@ name = "pypi"
 
 [packages]
 "e1839a8" = {path = ".", editable = true}
-
-[dev-packages]
-"e1839a8" = {path = ".", editable = true, extras = ["dev", "test"]}
-
+bump2version = "*"
+unittest-xml-reporting = "*"
+pytest = "*"
 
 [requires]
 python_version = "{%- if cookiecutter.python_2_7|lower == 'yes' %}2.7{%- else %}3.7{%- endif %}"

@@ -3,6 +3,7 @@
 """Console script for {{cookiecutter.project_slug}}."""
 import sys
 import click
+import {{cookiecutter.project_slug}}
 from decouple import config
 
 USER = config("USER")

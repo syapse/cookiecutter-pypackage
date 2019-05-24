@@ -84,10 +84,10 @@ jobs:
           PYTHONVERSION: 2.7
 
 {%- else %}
-      - image: circleci/python:3.6
+      - image: circleci/python:3.7
         environment:
           PIPENV_VENV_IN_PROJECT: true
-          PYTHONVERSION: 3.6
+          PYTHONVERSION: 3.7
 
 {%- endif %}
 

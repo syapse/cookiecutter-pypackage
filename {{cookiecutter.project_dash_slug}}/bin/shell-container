@@ -1,0 +1,11 @@
+#!/bin/bash
+
+IMAGE_NAME='{{cookiecutter.project_dash_slug | lower}}'
+
+echo "Starting a shell in the container ..."
+
+docker run \
+    --rm \
+    -it \
+    --entrypoint /bin/bash \
+    "$IMAGE_NAME"
