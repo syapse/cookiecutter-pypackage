@@ -75,11 +75,16 @@ remove_cli_code () {
     fi
 }
 
+create_env_file () {
+    cp '.env.example' '.env'
+}
+
 
 main () {
     initialize_repo
     remove_cli_code
     configure_packagecloud
+    create_env_file
 }
 
 main "$@"
