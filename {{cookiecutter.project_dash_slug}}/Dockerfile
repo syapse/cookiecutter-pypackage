@@ -23,7 +23,7 @@ RUN python -m pip install --upgrade --user pip setuptools
 COPY --chown=user:user setup.py setup.cfg /srv/
 
 # Create a dummy service directory for the dependency installation.
-RUN mkdir -p /srv/sypy
+RUN mkdir -p /srv/{{cookiecutter.project_slug}}
 
 # Copy the entrypoint files for booting the application.
 COPY --chown=user:user docker-entrypoint.sh /srv/
