@@ -42,4 +42,4 @@ ENV CC_REPORTER_URL=https://codeclimate.com/downloads/test-reporter/test-reporte
 ADD --chown=user:user "$CC_REPORTER_URL" /srv/cc-test-reporter
 
 # Set the command executed first when the container run
-ENTRYPOINT ["./docker-entrypoint.sh"]
+ENTRYPOINT ["/srv/docker-entrypoint.sh"]
