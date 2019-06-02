@@ -3,6 +3,8 @@
 """Top-level package for {{ cookiecutter.project_slug }}."""
 
 from pkg_resources import get_distribution, DistributionNotFound
+from {{cookiecutter.project_slug}} import *
+
 
 try:
     __version__ = get_distribution(__name__).version
